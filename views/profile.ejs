@@ -1,0 +1,79 @@
+<%- include('partials/_header') %>
+
+<%- include('partials/_nav') %>
+
+<div class="container">
+    <div class="row mt-1">
+        <div class=" col col-lg-7 mx-auto">
+            <div class="card rounded p-3 border-0 shadow-lg">
+                <div class="card-title text-center border-info rounded bg-info bg-opacity-10">
+                    <h4 class="my-2 text-info-emphasis">User Profile</h4>
+                    <div class="mb-3 text-center">
+                        <img src="img/node.png" class="rounded-5" width="100px">
+                    </div>
+                </div>
+                <form action="/profile" method="post">
+                <div class="card-body border-info rounded bg-info bg-opacity-10 rounded">
+                    <div class="card-subtitle mb-3">
+                        <h5 class="text-info-emphasis">Personel Details</h5>
+                    </div>
+                   
+
+                        <h6 class="text-info-emphasis">Username</h6>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control bg-info-subtle border-0 text-info-emphasis" id="floatingInput" placeholder="example : Monkey D Luffy">
+                            <label for="floatingInput" class="text-info-emphasis">Username</label>
+                        </div>
+
+                        <h6 class="text-info-emphasis">Gender</h6>
+                        <div class="input-group mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="radio" name="gender" id="male" checked>
+                                        <label class="form-check-label text-info-emphasis" for="male">
+                                          Male
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="radio" name="gender" id="female" >
+                                        <label class="form-check-label text-info-emphasis" for="female">
+                                          Female
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <h6 class="text-info-emphasis">Profession</h6>
+                            <select class="form-select form-select-lg mb-3 bg-info-subtle border-0 text-info-emphasis" aria-label=".form-select-lg example" name="profession">
+                                <option  value="Student" selected>Student</option>
+                                <option  value="Employed">Employed</option>
+                                <option  value="Self-Employed">Self-Employed</option>
+
+                              </select>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <h6 class="text-info-emphasis">Profile </h6>
+                            <div class="input-group">
+                                <input type="file" class="form-control border-0 bg-info-subtle rounded text-info-emphasis" name="profile">
+                              </div>
+                        </div>
+                </div>
+
+                <div class="card border-info border-0 bg-info bg-opacity-10 rounded mt-2">
+                    <button class="btn btn-lg bg-info-subtle text-info-emphasis "> Update Profile </button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>
