@@ -17,6 +17,24 @@ exports.signup = async( req,res ) => {
     })
 }
 
+exports.profile = async( req,res ) => {
+    res.render('Profile',{
+        title:"Railway | Profile"
+    })
+}
+
+exports.logs = async( req,res ) => {
+    res.render('logs',{
+        title:"Railway | Search History"
+    })
+}
+
+exports.panel = async( req,res ) => {
+    res.render('panel',{
+        title:"Railway | Admin Panel"
+    })
+}
+
 exports.error = async( req,res ) => {
     res.render('404',{
         title:"Railway | Error"
