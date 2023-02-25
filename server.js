@@ -11,6 +11,7 @@ const app = express()
 
 app.set('view engine','ejs')
 app.use(express.static('assets'))
+app.use(express.static('uploads'))
 app.use(bodyparser.urlencoded({extended:true}))
 app.use(bodyparser.json())
 app.use(morgan('tiny'))
