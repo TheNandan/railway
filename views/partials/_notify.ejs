@@ -1,4 +1,4 @@
-<div class="container shadow-lg">
+<div class="container shadow-lg ">
   <% if (message) { %>
     <div
     class="alert alert-<%= message.type%> alert-dismissible fade show border-0 shadow-sm"
@@ -10,6 +10,7 @@
       bottom: 0;
       margin-top: 10px;
       margin-right: 10px;
+      z-index: 1;
     "
   >
     <strong><%= message.message%></strong><hr>

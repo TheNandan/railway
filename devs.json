@@ -1,0 +1,30 @@
+{
+    "_id" : ObjectId("6401acd1001666a63c854974"),
+    "name" : "Nandan S",
+    "email" : "thenandansrinivas@gmail.com",
+    "phone" : 8150003002.0,
+    "linkedin" : "thenandan",
+    "github" : "TheNandan",
+    "image":"nikhil.png",
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("6401ae1977fe96080811386c"),
+    "name" : "Mithun Sathya H S",
+    "email" : "mithun.sathyahs@gmail.com",
+    "phone" : 7892773981.0,
+    "linkedin" : "nikhil-gowda-b3b742268",
+    "github" : "Nikhil-web-creator",
+    "image":"nikhil.png",
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("6401ae59aa9f50445a5d26ff"),
+    "name" : "Nikhil C T",
+    "email" : "gowdanikhil066@gmail.com",
+    "phone" : 9164516187.0,
+    "linkedin" : "nikhil-gowda-b3b742268",
+    "github" : "Nikhil-web-creator",
+    "image":"nikhil.png",
+    "__v" : NumberInt(0)
+}

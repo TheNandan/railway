@@ -1,0 +1,85 @@
+<%- include('partials/_header') %>
+<%- include('partials/_notify') %>
+<%- include('partials/_nav') %>
+<% if (auth) { %>
+  <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-success">Active</span></h5>
+<% }else{ %>
+  <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-danger">InActive</span></h5>
+<% } %>
+<div class="container my-5">
+
+    <div class="row">
+        <div class="col col-lg-6 mx-auto">
+          <div class="card shadow-sm border border-0 rounded-2">
+            <div class="card-title text-center p-3 mb-2 bg-primary-subtle my-auto rounded-top">
+              <h4 class="text-primary-emphasis ">Add Train</h4>
+            </div>
+            <div class="card-body border-0">
+              <form action="/updatetrain/<%= train._id %>" method="post">
+                <div class="mb-3">
+                  <label for="trainname" class="form-label"><h5>Train Name</h5></label>
+                  <input class="form-control" type="text" placeholder="Train Name" aria-label="Train Name" id="trainname" name="trainname" value="<%= train.name %>">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="city" class="form-label"><h5>City</h5></label>
+                  <div class="row">
+                    <div class="col">
+                      <label for="exampleDataList" class="form-label"><h6>Source :</h6></label>
+                      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." name="source" value="<%= train.source %>">
+                      <datalist id="datalistOptions">
+                        <% city.forEach(cities => { %>
+                          <option value="<%= cities.name %>">
+                        <% }) %>
+                      </datalist>
+                    </div>
+                    <div class="col">
+                      <label for="exampleDataList" class="form-label"><h6>Destination :</h6></label>
+                      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." name="destination" value="<%= train.destination %>">
+                      <datalist id="datalistOptions">
+                        <% city.forEach(cities => { %>
+                          <option value="<%= cities.name %>">
+                        <% }) %>
+                      </datalist>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="mb-3 mt-2">
+                  <label for="city" class="form-label"><h5>Date</h5></label>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label"><h6>Start : </h6></label>
+                      <input type="date" name="starttrain" value="<%= train.startDate %>" >
+                    </div>
+                    <div class="col">
+                      <label class="form-label"><h6>End : </h6></label>
+                      <input type="date" name="endtrain" value="<%= train.endDate %>">
+                    </div>
+                  </div>
+                  </select>
+                </div>
+                  
+                <div class="mb-3">
+                  <label for="traintime"><h5>Train Time : </h5></label>
+                  <input type="time" name="traintime" id="traintime" value="<%= train.time %>">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for=""><h5>Tickets : </h5></label>
+                <input type="number" name="ticket" id="traintime" value="<%= train.ticket %>">
+              </div>
+            </div>
+
+              <div class="card border-warning border-0 bg-primary-subtle bg-opacity-10 rounded mt-2">
+                <button class="btn btn-lg text-primary-emphasis"> <h5>Update Train</h5> </button>
+            </div>
+              </form>
+              
+          </div>
+        </div>
+      </div>
+
+</div>
+<%- include('partials/_footer') %>

@@ -1,0 +1,49 @@
+<%- include('partials/_header') %>
+<%- include('partials/_notify') %>
+<%- include('partials/_nav') %>
+<% if (auth) { %>
+    <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-success">Active</span></h5>
+<% }else{ %>
+    <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-danger">InActive</span></h5>
+<% } %>
+
+<div class="container  mt-3 text-center">
+    <form action="/addcity" method="post">
+        <div class="row">
+            <div class="col col-lg-3 border border-success bg-success-subtle rounded">
+                <h5 class="text-success my-2" ><%= cc %></h5>
+            </div>
+            <div class="col col-lg-6 ">
+                <input class="form-control form-control-lg bg-warning-subtle text-center border border-warning text-warning-emphasis" type="text" placeholder="Enter City Name" name="cityname">
+            </div>
+            <div class="col col-lg-3">
+                <div class="card border border-primary bg-primary-subtle bg-opacity-10 rounded">
+                    <button class="btn text-primary-emphasis"> <h5>Add City</h5> </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container mt-3">
+
+        <div class="row">
+            <% colors.forEach(color => { %>
+            <% city.forEach(cities => { %>
+                
+                    <div class="col">
+                        <div class="card shadow-sm px-5 py-5 mt-2 bg-<%= color.c %>-subtle border border-2 border-<%= color.c %>">
+                                <a href="/deletecity/<%= cities._id %>"><span class="position-absolute top-0 end-0 me-2 mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="red" d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9m0 5h2v9H9V8m4 0h2v9h-2V8Z"/></svg></span></a>
+                            <div class="text-center">
+                                <h1 ><%= cities.name %></h1>
+                                <h6 class="text-<%= color.c %>-emphasis"><%= cities.addedOn %></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <% }) %>
+            <% }) %>
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

@@ -25,7 +25,11 @@ app.use( (req,res,next) => {
     delete req.session.message
     next()
 })
-
+app.use( (req,res,next) => {
+    res.locals.train = req.session.train
+    delete req.session.train
+    next()
+})
 app.use('/',require('./server/routes/router'))
 
 connectDB().then(

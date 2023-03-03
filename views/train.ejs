@@ -1,0 +1,90 @@
+<%- include('partials/_header') %>
+<%- include('partials/_notify') %>
+<%- include('partials/_nav') %>
+<% if (auth) { %>
+    <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-success">Active</span></h5>
+<% }else{ %>
+    <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-danger">InActive</span></h5>
+<% } %>
+<div class="container mt-3">
+    <a class="btn bg-success-subtle text-success-emphasis" href="/addtrain"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6h-2Z"/></svg> add train</a>
+</div>
+
+<% if (trains) { %>
+    
+    <div class="container">
+        <table class="table table-hover text-center mt-3">
+            <thead>
+                <tr class="bg-primary text-light">
+                    <th rowspan="2" >#</th>
+                    <th >Train</th>
+                    <th colspan="2">City</th>
+                    <th colspan="2">Date</th>
+                    <th rowspan="2">Ticket Available</th>
+                    <th rowspan="2">Time</th>
+                    <th rowspan="2">Added On</th>
+                    <th rowspan="2">Updated On</th>
+                    <th rowspan="2">Action</th>
+                </tr>
+                <tr class="bg-primary-subtle text-primary">
+                    <th>Name</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+            </thead>
+            <tbody>
+               <% trains.forEach((train,index) => { %>
+                <tr class="py-2">
+                    <td><h6><%= index+1 %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.name %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.source %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.destination %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.startDate %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.endDate %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.ticket %></h6></td>
+                    <td class="bg-primary-subtle"><h6 class="text-primary-emphasis"><%= train.time %></h6></td>
+                    <td><h6 class="text-warning"><%= train.addedOn %></h6></td>
+                    <td><h6 class="text-success"><%= train.updatedOn %></h6></td>
+                    <td>
+                        <a href="/edittrain/<%= train._id %>" class="text-warning"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg></a>
+                        <a href="/deletetrain/<%= train._id %>" class="text-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9m0 5h2v9H9V8m4 0h2v9h-2V8Z"/></svg>
+                        </a>
+                    </td>
+            </tr>
+               <% }) %>
+            </tbody>
+            <tfoot class="bg-primary-subtle ">
+                <tr>
+                    <th colspan="11">                   
+                            <h5 class=" text-primary-emphasis">Coded with 💙</h5>
+                    </th>
+                </tr>
+        </tfoot>
+        </table>
+    </div>
+
+<% } else if(trains == 0){%>
+
+    <div class="container bg-primary-subtle mt-3 rounded text-center py-5 px-5">
+        <div class="box border-primary rounded py-5 px-5 border-opacity-50" style="border-style: dashed;">
+            <h1 class="text-primary">Sorry ! No train found.</h1>
+        </div>
+    </div>
+
+<% } %>
+
+
+
+
+
+    
+    
+
+
+
+
+
+<%- include('partials/_footer') %>
