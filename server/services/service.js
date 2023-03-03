@@ -51,7 +51,7 @@ exports.profile = async( req,res ) => {
     }
     else
     {  
-        res.render('Profile',{
+        res.render('profile',{
         title:"Railway | Profile",
         auth:auth
     })
