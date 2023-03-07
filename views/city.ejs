@@ -28,20 +28,23 @@
 <div class="container mt-3">
 
         <div class="row">
-            <% colors.forEach(color => { %>
+            
             <% city.forEach(cities => { %>
                 
                     <div class="col">
-                        <div class="card shadow-sm px-5 py-5 mt-2 bg-<%= color.c %>-subtle border border-2 border-<%= color.c %>">
+                        <div class="card shadow-sm px-5 py-5 mt-2 border border-2 ">
+                            
                                 <a href="/deletecity/<%= cities._id %>"><span class="position-absolute top-0 end-0 me-2 mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="red" d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9m0 5h2v9H9V8m4 0h2v9h-2V8Z"/></svg></span></a>
                             <div class="text-center">
                                 <h1 ><%= cities.name %></h1>
-                                <h6 class="text-<%= color.c %>-emphasis"><%= cities.addedOn %></h6>
+                                <h6 ><%= cities.addedOn %></h6>
+                             
                             </div>
                         </div>
+
                     </div>
                     
-                <% }) %>
+                
             <% }) %>
         </div>
 </div>

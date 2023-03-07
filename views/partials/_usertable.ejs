@@ -17,7 +17,7 @@
                 <% profile.forEach((user,index) => { %>
                     <tr class="py-3">
                         <td><h6><%= index+1 %></h6></td>
-                        <td><img src="/<%= user.image %>" alt="" width="50px" class="rounded-circle shadow-sm"></td>
+                        <td><img src="/<%= user.image %>" alt="" width="50px" class="rounded shadow-sm img-thumbnail"></td>
                         <td><h6><%= user.username %></h6></td>
                         <td><h6><%= user.email %></h6></td>
                         <td><h6><%= user.gender %></h6></td>
