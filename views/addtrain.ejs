@@ -1,11 +1,7 @@
 <%- include('partials/_header') %>
 <%- include('partials/_notify') %>
 <%- include('partials/_nav') %>
-<% if (auth) { %>
-  <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-success">Active</span></h5>
-<% }else{ %>
-  <h5 class="ms-1 mb-1 position-absolute bottom-0 text-primary-emphasis">Status : <span class="text-danger">InActive</span></h5>
-<% } %>
+
 <div class="container">
 
     <div class="row">
@@ -65,7 +61,6 @@
                   <label for="traintime"><h5>Tickets : </h5></label>
                   <input type="number" name="ticket" class="form-control">
                 </div>
-              </div>
 
                 <div class="mb-3">
                   <label for="traintime"><h5>Train Time : </h5></label>
@@ -73,9 +68,14 @@
                 </div>
               </div>
 
+                
+
+                
+              </div>
               <div class="card border-warning border-0 bg-primary-subtle bg-opacity-10 rounded mt-2">
                 <button class="btn btn-lg text-primary-emphasis"> <h5>Add Train</h5> </button>
             </div>
+              
               </form>
               
           </div>
