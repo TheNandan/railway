@@ -467,23 +467,8 @@ exports.deletecity = async( req,res ) => {
 }
 
 exports.getLogout = async( req,res ) => {
-    if(req.session.auth)
-    {
-        req.session.destroy( (err) => {
-            if(err)
-            {
-                console.log(err)
-            }
-            else
-            {
-                res.redirect('/')
-            }
-        })
-    }
-    else
-    {
+        req.session.destroy()
         res.redirect('/')
-    }
 }
 
 exports.home = async( req,res ) => {
